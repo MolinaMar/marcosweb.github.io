@@ -1,0 +1,590 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-image: url('/img/grey-texture-background-cupxi624ho40xpjn.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo sea estático */
+    
+}
+
+header {
+    width: 100%;
+    height: 60%;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+       
+}
+
+
+
+.hamburguer {
+    display: none;
+}
+
+.nav-bar{
+    padding-right: 20px;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end; /* Mueve los enlaces hacia la derecha */
+    width: 111%;
+    
+    
+}
+
+.nav-bar ul li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px; /* Reducir el padding */
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 2px; /* Reducir el margen */
+}
+
+.nav-bar ul li a:hover{
+    color: gray;
+}
+
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+        
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        background: #232323;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 340px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 10px auto ;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+/* Estilos para centrar los elementos en el main-container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos dentro del formulario */
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo del formulario */
+}
+
+/* Estilos para las filas del formulario */
+.row {
+    display: flex;
+    gap: 20px; /* Espacio entre los elementos de la fila */
+    width: 100%;
+    justify-content: space-between; /* Distribuye los elementos en la fila */
+    margin-bottom: 20px; /* Espacio inferior entre filas */
+}
+
+/* Estilos para las cajas de entrada */
+.nombre-box, .correo-box, .tel-box, .compania-box, .razon-box, .estado-box {
+    flex: 1; /* Permite que los elementos ocupen el mismo espacio */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ajustes adicionales para la caja de comentarios */
+.comentario-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos para los inputs y select */
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+    width: 100%; /* Asegura que los elementos de entrada ocupen todo el espacio disponible */
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilos para el botón de enviar */
+.Enviar {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em; /* Tamaño de fuente reducido */
+    padding: 0.5rem 1rem; /* Padding reducido */
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 5px; /* Borde redondeado reducido */
+    width: auto;
+    position: relative;
+
+    &::after {
+        
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        position: absolute;
+        left: 85%;
+        top: 31%;
+        right: 5%;
+        bottom: 0;
+        opacity: 0;
+
+    }
+
+    &:hover {
+        background: #1a1aa5;
+        transition: all 0.5s;
+        border-radius: 10px;
+        box-shadow: 0px 6px 15px #0000ff61;
+        padding: 1.5rem 3.5rem 1.5rem 1.5rem;
+
+        &::after {
+            opacity: 1;
+            transition: all 0.5s;
+
+        }
+    }
+}
+
+.footer-grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-grid ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin: 5px 0;
+}
+
+.footer-grid ul li strong {
+    font-size: 1.2em;
+}
+
+.footer-grid{
+    background-color: #232323;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-grid ul li a i {
+    margin-right: 10px;
+}
+
+
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite el acomodo en varias líneas si es necesario */
+    justify-content: space-around; /* Espacio equitativo entre los elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+.ubs-main-container, .ubs-main-container-2, .ubs-main-container-3 {
+    width: calc(33.33% - 20px); /* Ajustar para tener tres columnas con espacio entre ellas */
+    max-width: 450px;
+    margin: 10px; /* Espaciado entre columnas */
+}
+
+.ubs-main-grid {
+    padding: 20px;
+    cursor: pointer;
+    position: relative; /* Necesario para posicionar el texto */
+    overflow: hidden; /* Asegura que la superposición no se desborde */
+    transition: opacity 0.3s ease; /* Suavizar la transición de opacidad */
+}
+
+.info-container-1, .info-container-2, .info-container-3 {
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%; /* Ajustado al 100% para ocupar el ancho del padre */
+    max-width: 450px; /* Ancho máximo ajustado al de .ubs-main-container */
+    height: 0; /* Altura inicial en 0 para la animación */
+    overflow: hidden; /* Añadido para clearfix */
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.3s ease, height 0.3s ease; /* Transición de opacidad y altura */
+    display: none; /* Asegura que no ocupe espacio cuando está oculto */
+}
+
+.info-container-1.show, .info-container-2.show, .info-container-3.show {
+    opacity: 1; /* Mostrar con opacidad completa */
+    height: 200px; /* Altura al mostrar */
+    display: block; /* Asegura que se muestre */
+}
+
+.info-container-1 .info-left-1, .info-container-2 .info-left-2, .info-container-3 .info-left-3 {
+    float: left;
+    width: 50%;
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    padding: 10px;
+    box-sizing: border-box; /* Añadido para incluir el padding en el ancho total */
+    height: 100%; /* Ajustar altura al 100% */
+}
+
+.info-container-1 .info-left-1 a, .info-container-2 .info-left-2 a, .info-container-3 .info-left-3 a{
+    color: #000000;
+}
+
+.info-container-1 .info-right-1, .info-container-2 .info-right-2, .info-container-3 .info-right-3 {
+    float: left; /* Cambiado de float: right a float: left */
+    width: 50%;
+    background-color: #232323; /* Fondo negro */
+    color: white; /* Texto blanco */
+    padding: 10px;
+    box-sizing: border-box; /* Añadido para incluir el padding en el ancho total */
+    height: 100%; /* Ajustar altura al 100% */
+    text-decoration:none;
+}
+
+/* Clearfix para manejar el float */
+.info-container-1::after, .info-container-2::after, .info-container-3::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Estilo para el icono de mapa */
+.map-icon {
+    width: 16px; /* Ajusta el tamaño del icono */
+    height: 16px; /* Ajusta el tamaño del icono */
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+    vertical-align: middle; /* Alinear verticalmente el icono con el texto */
+}
+
+/* Quitar puntos de las listas */
+ul {
+    list-style-type: none;
+    padding-left: 0; /* Quitar el padding izquierdo por defecto */
+}
+
+.phone-icon {
+    width: 16px; /* Ajusta el tamaño del icono */
+    height: 16px; /* Ajusta el tamaño del icono */
+    margin-right: 5px; /* Espacio entre el icono y el número de teléfono */
+    vertical-align: middle; /* Alinear verticalmente el icono */
+}
+
+.description-box {
+    display: flex;
+    justify-content: center; /* Para alinear los elementos en el centro */
+    padding: 20px; /* Añade espacio alrededor del contenido */
+    background-color: rgb(197, 197, 197); /* Fondo de ejemplo */
+    width: 100%; /* Ancho del contenedor */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-decoration:none;
+    
+    align-items: center;
+}
+
+.description-tittle-left, .description-paragrahp-right {
+    text-align: justify; /* Centra el texto */
+}
+
+.description-tittle-left {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    padding-right: 20px; /* Espacio entre el título y el párrafo */
+}
+
+.description-paragrahp-right {
+    flex: 2; /* Ocupa el doble del espacio disponible comparado con el título */
+    text-decoration:none;
+}
+
+
+
+.ubs-main-grid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color negro con opacidad */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Asegura que la superposición esté por encima del contenido */
+    text-decoration:none;
+}
+
+.ubs-main-grid:hover::before {
+    opacity: 1; /* Hacer la superposición visible al hacer hover */
+}
+
+/* Estilo para el texto que aparece al hacer hover */
+.hover-text {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Asegura que el texto esté centrado */
+    font-size: 24px;
+    z-index: 2; /* Asegura que el texto esté por encima de la superposición */
+}
+
+/* Mostrar el texto al hacer hover */
+.ubs-main-grid:hover .hover-text {
+    display: block;
+}
+
+.footer-grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #232323;
+    color: #fff;
+}
+
+.footer-grid ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin: 5px 0;
+}
+
+.footer-grid ul li strong {
+    font-size: 1.2em;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-grid ul li a i {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-container {
+        padding: 20px; /* Añadido espacio alrededor del contenedor principal */
+    }
+
+    form {
+        max-width: 100%; /* Ajusta el formulario al ancho completo del contenedor */
+    }
+
+    .row {
+        flex-direction: column; /* Cambia a disposición de columna para elementos de fila */
+        gap: 10px; /* Añade espacio entre elementos */
+    }
+
+    .Enviar {
+        width: 100%; /* Ancho completo para el botón de enviar */
+    }
+
+    .ubs-main-container,
+    .ubs-main-container-2,
+    .ubs-main-container-3 {
+        width: calc(100% - 20px); /* Ajusta para ocupar el ancho completo con espacio entre elementos */
+    }
+
+    .info-container-1,
+    .info-container-2,
+    .info-container-3 {
+        max-width: 100%; /* Ajusta al ancho completo del padre */
+       
+    }
+
+    .info-container-1 .info-left-1,
+    .info-container-2 .info-left-2,
+    .info-container-3 .info-left-3,
+    .info-container-1 .info-right-1,
+    .info-container-2 .info-right-2,
+    .info-container-3 .info-right-3 {
+        width: 100%; /* Ajusta al ancho completo */
+        text-decoration:none;
+   
+        
+        box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Cambia la disposición a una columna en pantallas pequeñas */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas pequeñas */
+    }
+
+    .footer-grid ul {
+        text-align: center; /* Centra el texto dentro de cada lista */
+    }
+
+    .footer-grid ul li {
+        margin: 10px 0; /* Ajusta el margen para pantallas pequeñas */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ubs-main-container, .ubs-main-container-2, .ubs-main-container-3 {
+        width: calc(80% - 20px); /* Reducir el ancho a un 80% */
+        max-width: 350px; /* Ajustar el tamaño máximo */
+    }
+
+    .info-container-1 .info-left-1, .info-container-2 .info-left-2, .info-container-3 .info-left-3,
+    .info-container-1 .info-right-1, .info-container-2 .info-right-2, .info-container-3 .info-right-3 {
+        width: 100%;
+        height: 55%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ubs-main-container, .ubs-main-container-2, .ubs-main-container-3 {
+        width: 90%; /* Reducir el ancho a un 90% */
+        max-width: 300px; /* Ajustar el tamaño máximo */
+    }
+
+    .info-container-1.show, .info-container-2.show, .info-container-3.show {
+        height: auto;
+    }
+}
+
+/* Contenedor principal que contiene los .ubs-main-container */
+.ubs-main-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo base para los contenedores individuales */
+.ubs-main-container, .ubs-main-container-2, .ubs-main-container-3 {
+    width: calc(33.33% - 20px);
+    max-width: 450px;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+/* Ajustes responsivos */
+@media only screen and (max-width: 900px) {
+    .ubs-main-container, .ubs-main-container-2, .ubs-main-container-3 {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .ubs-main-container h3, .ubs-main-container-2 h3, .ubs-main-container-3 h3 {
+        text-align: center;
+    }
+
+    .ubs-main-grid {
+        height: auto;
+        justify-content: center;
+    }
+
+    .info-container-1, .info-container-2, .info-container-3 {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .description-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .description-tittle-left {
+        order: 1;
+    }
+
+    .description-paragrahp-right {
+        order: 2;
+    }
+}
+
+.dec li{
+    text-decoration: none;
+}

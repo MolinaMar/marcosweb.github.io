@@ -1,0 +1,666 @@
+/* Estilos del header */
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-image: url('/img/grey-texture-background-cupxi624ho40xpjn.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo sea estático */
+    
+}
+
+header {
+    width: 100%;
+    height: 60%;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    list-style:none;
+       
+}
+
+
+
+.hamburguer {
+    display: none;
+    list-style:none;
+}
+
+.nav-bar{
+    padding-right: 20px;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end; /* Mueve los enlaces hacia la derecha */
+    width: 111%;
+    list-style:none;
+    
+    
+}
+
+.nav-bar ul li a{
+    display: block;
+    color: white;
+    text-decoration:none;
+    font-size: 20px;
+    padding: 10px 15px; /* Reducir el padding */
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 2px; /* Reducir el margen */
+}
+
+.nav-bar ul li a:hover{
+    color: gray;
+}
+
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+        
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #232323;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 340px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 10px auto ;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+/* Estilos del slider */
+
+#container-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 915px; /* Ajustado para el ancho máximo */
+    margin: 0 auto; /* Centrar el slider */
+}
+
+#slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 475px; /* Cambiado a 475px */
+    min-height: 475px; /* Cambiado a 475px */
+    max-width: 915px; /* Cambiado a 915px */
+    margin: 0 auto; /* Centrar el slider */
+}
+
+#slider li {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+    z-index: -1;
+    opacity: 0;
+}
+
+#container-slider .arrowPrev, #container-slider .arrowNext {
+    font-size: 30pt;
+    color: #000; /* Cambiado a negro */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 2; 
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente para mejor visibilidad */
+    border-radius: 50%; /* Hacer los botones redondeados */
+    padding: 10px; /* Añadir algo de espacio alrededor del icono */
+}
+
+#container-slider .arrowPrev {
+    left: 15px;
+}
+
+#container-slider .arrowNext {
+    right: 15px;
+}
+
+.content_slider {
+    padding: 15px 30px;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_slider div {
+    text-align: center;
+}
+
+.content_slider h2 {
+    font-family: 'arial';
+    font-size: 30pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.content_slider p {
+    font-size: 15pt;
+    font-family: 'arial';
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+#slider li .content_slider {
+    background: none; /* Eliminado el color opaco */
+    padding: 10px 125px;
+}
+
+.btnSlider {
+    color: #FFF;
+    font-size: 15pt;
+    font-family: 'arial';
+    letter-spacing: 1px;
+    padding: 10px 50px;
+    border: 1px solid #CCC;
+    background: rgba(13, 13, 13, 0.55);
+    border-radius: 31px;
+    text-decoration: none;
+    transition: .5s all;
+}
+
+.btnSlider:hover {
+    background: #111;
+    border: 1px solid #111;
+}
+
+.listslider {
+    position: absolute;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 50%;
+    bottom: 5%;
+    list-style: none;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.listslider li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.listslider li a {
+    background: #CCC;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.item-select-slid {
+    background: #FFF !important;
+}
+
+@media screen and (max-width: 460px) {
+    #slider {
+        height: 275px; /* Cambiado a 275px */
+        min-height: 275px; /* Cambiado a 275px */
+        max-width: 600px; /* Cambiado a 600px */
+    }
+    .content_slider h2 {
+        font-size: 15pt !important;
+    }
+    .content_slider p {
+        font-size: 12pt !important;
+    }
+    #container-slider .arrowPrev, #container-slider .arrowNext {
+        font-size: 20pt;
+    }
+    #container-slider .arrowPrev {
+        left: 15px;
+    }
+    #container-slider .arrowNext {
+        right: 15px !important;
+    }
+    #slider li .content_slider {
+        padding: 10px 35px;
+    }
+    .btnSlider {
+        padding: 10px 30px;
+        font-size: 10pt;
+    }
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Estilo para los nuevos botones de navegación */
+.prev, .next {
+    font-size: 30px; /* Tamaño del icono */
+    color: #000; /* Color negro */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Redondear los botones */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco más opaco al pasar el cursor */
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+/* Estilos generales */
+.container {
+    padding: 20px; /* Añade relleno interno al contenedor principal */
+    display: flex;
+    margin: 150px;
+}
+
+.Mision, .Vision {
+    flex: 1; /* Haz que ambos divs ocupen el mismo espacio */
+    padding: 20px; /* Añade algo de espacio alrededor de cada div */
+    text-align: justify;
+}
+
+.Mision h1, .Vision h1 {
+    text-align: center;
+}
+
+.Mision img, .Vision img {
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+    max-width: 100%; /* Asegura que la imagen no sobrepase el ancho disponible */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+.separator {
+    width: 90%; /* Reducimos el ancho al 90% del contenedor */
+    height: 1px;
+    background-color: #ccc;
+    margin: 50px auto 20px; /* Margin-top y bottom 50px y margin-left y right auto para centrar horizontalmente */
+}
+
+.extra-info, .extra-info2, .extra-info3, .extra-info4 {
+    display: flex; /* Si quieres que el texto y la imagen estén uno al lado del otro */
+    align-items: flex-start; /* Alinea los elementos al inicio, en caso de que quieras ajustar la alineación vertical */
+    gap: 20px; /* Añade un espacio entre los elementos de texto e imagen */
+    margin: 150px;
+}
+
+.text-left h2, .text-right h1, .text-left2 h1, .text-right2 h1 {
+    text-align: center; /* Centra el texto de los encabezados */
+    margin-bottom: 10px; /* Espaciado opcional entre los encabezados */
+}
+
+.text-left p, .text-right p, .text-left2 p, .text-right2 p {
+    text-align: justify; /* Justifica el texto del párrafo */
+    font-size: 20px;
+}
+
+.footer-grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #232323;
+    color: #fff;
+}
+
+.footer-grid ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin: 5px 0;
+}
+
+.footer-grid ul li strong {
+    font-size: 1.2em;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-grid ul li a i {
+    margin-right: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+    .container {
+        margin: 100px;
+    }
+
+    .extra-info, .extra-info3, .extra-info4 {
+        margin: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        margin: 80px;
+    }
+
+    .extra-info, .extra-info3, .extra-info4 {
+        margin: 80px;
+    }
+
+    .text-left p, .text-right p, .text-left2 p, .text-right2 p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 50px;
+        flex-direction: column; /* Hace que los elementos se apilen verticalmente */
+    }
+
+    .extra-info, .extra-info2, .extra-info3, .extra-info4 {
+        margin: 50px;
+        flex-direction: column; /* Hace que el texto y la imagen se apilen verticalmente */
+        gap: 10px; /* Reduce el espacio entre los elementos */
+    }
+
+    .text-left p, .text-right p, .text-left2 p, .text-right2 p {
+        font-size: 16px;
+    }
+
+    .separator {
+        width: 100%; /* Hace que el separador ocupe el ancho completo */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        margin: 20px;
+    }
+
+    .extra-info, .extra-info2, .extra-info3, .extra-info4 {
+        margin: 20px;
+    }
+
+    .text-left p, .text-right p, .text-left2 p, .text-right2 p {
+        font-size: 20px;
+    }
+
+    .extra-info, .extra-info2, .extra-info3, .extra-info4 {
+        flex-direction: column; /* Disposición vertical para el texto y la imagen */
+        margin: 50px 20px; /* Ajusta el margen en dispositivos móviles */
+    }
+
+    .extra-info img,.extra-info2 img, .extra-info3 img, .extra-info4 img {
+        max-width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Cambia la disposición a una columna en pantallas pequeñas */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas pequeñas */
+    }
+
+    .footer-grid ul {
+        text-align: center; /* Centra el texto dentro de cada lista */
+    }
+
+    .footer-grid ul li {
+        margin: 10px 0; /* Ajusta el margen para pantallas pequeñas */
+    }
+}
+
+/* Mapa Responsive */
+.map {
+    width: 100%; /* Asegura que el contenedor del mapa ocupe todo el ancho disponible */
+    max-width: 100%; /* Evita que exceda el ancho del contenedor padre */
+    height: auto; /* Mantiene la proporción del mapa */
+}
+
+.map iframe {
+    width: 100%; /* Hace que el iframe ocupe todo el ancho disponible */
+    height: auto; /* Ajusta la altura automáticamente */
+    min-height: 300px; /* Puedes ajustar la altura mínima para móviles */
+}
+
+/* Media Queries para la Responsividad */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Cambia a disposición vertical en pantallas pequeñas */
+        margin: 50px 20px; /* Ajusta el margen en dispositivos móviles */
+    }
+
+    .extra-info, .extra-info2, .extra-info3, .extra-info4 {
+        flex-direction: column; /* Disposición vertical para el texto y la imagen */
+        margin: 50px 20px; /* Ajusta el margen en dispositivos móviles */
+    }
+}
+
+@media (max-width: 768px) {
+    .extra-info4, .extra-info2 {
+        flex-direction: column; /* Coloca los elementos en una sola columna */
+    }
+
+    .extra-info4 .text-right2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .extra-info4 .imagen-mantenimiento {
+        order: 2; /* Asegura que la imagen quede debajo del párrafo */
+    }
+
+    .extra-info4 p {
+        order: 1; /* Asegura que el párrafo quede arriba de la imagen */
+    }
+}
+
+
+/* Estilo general para dispositivos de escritorio */
+.extra-info2 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.imagen-reparaciones {
+    order: 0; /* Cambia el orden del div a 0, para que aparezca antes del otro */
+    margin-right: 20px; /* Añade un poco de espacio entre el texto y la imagen */
+}
+.imagen-reparaciones img {
+    width: 500px; /* Establece un ancho fijo para la imagen */
+    height: auto; /* Hace que la altura de la imagen se ajuste automáticamente */
+}
+
+
+.text-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.text-right ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.text-right li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .extra-info2 {
+        flex-direction: column; /* Disposición vertical en dispositivos móviles */
+        text-align: center;
+    }
+
+    .text-right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .text-right h1 {
+        margin-bottom: 10px; /* Espacio debajo del título */
+    }
+
+    .text-right p {
+        margin-bottom: 10px; /* Espacio debajo del párrafo */
+    }
+
+    .text-right ul {
+        margin-top: 10px; /* Espacio superior para los elementos de lista */
+    }
+
+    .text-right li {
+        margin-bottom: 10px; /* Espacio entre los elementos de lista */
+        display: block; /* Asegura que los elementos de lista estén en columna */
+        text-align: left;
+        
+    }
+
+    .imagen-reparaciones {
+        order: 2; /* Mueve la imagen al final en el flujo */
+        margin-top: 20px; /* Añade separación superior para la imagen */
+    }
+
+    .text-right {
+        order: 1; /* Asegura que el texto quede antes de la imagen */
+    }
+}
+
+.text-right ul li {
+    list-style-type: disc;
+    margin-left: 20px; /* Ajuste opcional para el margen izquierdo */
+}
+
+.text-right li {
+    list-style-position: inside; /* Opcional: Ajusta la posición del punto de lista */
+}
+
+@media only screen and (max-width: 768px) {
+    .text-right ul {
+        list-style-type: disc; /* Asegura que los puntos de lista se mantengan en móviles */
+    }
+
+    .text-right li {
+        display: list-item; /* Forza la visualización correcta en móviles */
+    }
+}

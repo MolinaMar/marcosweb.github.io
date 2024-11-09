@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-image: url('/img/grey-texture-background-cupxi624ho40xpjn.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo sea estático */
+    
+}
+
+header {
+    width: 100%;
+    height: 60%;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+       
+}
+
+
+
+.hamburguer {
+    display: none;
+}
+
+.nav-bar{
+    padding-right: 20px;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end; /* Mueve los enlaces hacia la derecha */
+    width: 111%;
+    
+    
+}
+
+.nav-bar ul li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px; /* Reducir el padding */
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 2px; /* Reducir el margen */
+}
+
+.nav-bar ul li a:hover{
+    color: gray;
+}
+
+h1{
+    text-align:center;
+}
+
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+        
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        background: #232323;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 340px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 10px auto ;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+/* Contenedor principal con márgenes */
+.main-container {
+    margin: 0 40px; /* Márgenes laterales aumentados */
+}
+
+/* Nuevos estilos para cli-articles-grid y article-box */
+.cli-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 2 columnas */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px; /* Ancho máximo */
+    margin: auto; /* Centrar el contenedor */
+}
+
+.article-box {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.article-box ul {
+    list-style-type: disc; /* Muestra los puntos negros predeterminados */
+    padding-left: 20px; /* Añade espacio a la izquierda para que los puntos se vean correctamente */
+}
+
+
+
+.article-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Reduce el ancho máximo */
+}
+
+.article-img {
+    width: 100%;
+    height: 200px; /* Reduce la altura */
+    overflow: hidden;
+}
+
+.article-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+}
+
+.article-content p {
+    text-align: justify;
+    padding: 10px 0;
+}
+
+.footer-grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #232323;
+    color: #fff;
+}
+
+.footer-grid ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin: 5px 0;
+}
+
+.footer-grid ul li strong {
+    font-size: 1.2em;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-grid ul li a i {
+    margin-right: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Cambia la disposición a una columna en pantallas pequeñas */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas pequeñas */
+    }
+
+    .footer-grid ul {
+        text-align: center; /* Centra el texto dentro de cada lista */
+    }
+
+    .footer-grid ul li {
+        margin: 10px 0; /* Ajusta el margen para pantallas pequeñas */
+    }
+}
+
+.points li {
+    list-style:disc;
+}
+
+h3 {
+    text-align:center;
+}

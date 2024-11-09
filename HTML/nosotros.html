@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="/css/stylesNosotros.css">
+    <link rel="icon" href="/img/LogoUBS.png" type="img/icon">
+</head>
+<body>
+    <header>
+        
+            <a href="index.html"><img src="/img/LogoUBS.png" alt="logo" style="height: 60px;"></a>
+            
+        <div class="hamburguer">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <a href="index.html" class="active">Inicio</a>
+                </li>
+                <li>
+                    <a href="nosotros.html">Nosotros</a>
+                </li>
+                <li>
+                    <a href="servicios.html">Servicios</a>
+                </li>
+                <li>
+                    <a href="clientes.html">Productos</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="container-slider">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>    
+        <ul class="listslider">
+          <li><a itlist="itList_0" href="#" class="item-select-slid"></a></li>
+          <li><a itlist="itList_1" href="#"></a></li>
+          <li><a itlist="itList_2" href="#"></a></li>
+        </ul>
+        <ul id="slider">
+          <li style="background-image: url('/img/Architects1.jpg'); z-index:0; opacity: 1;">
+            <div class="content_slider" >
+              <div>
+                <h2>¿Quiénes somos?</h2>
+                
+          </div>
+            </div>
+          </li>
+          <li style="background-image: url('/img/D&M\ Fresnillo\ 014.jpg'); ">
+            <div class="content_slider" >
+                <p>Somos una de las empresas líder inteligente, capaz de diseñar 
+                    soluciones de climatización a la medida de tu instalación y necesidades.</p>
+                
+            
+            </div>
+          </li>
+          <li style="background-image: url('/img/iStock-507376759.jpg'); ">
+            <div class="content_slider" >
+              <div>
+                <p>Contamos con más de 20 años de experiencia desde 2003 en el sector de aires acondicionados</p>
+                
+                
+          </div>
+            </div>
+          </li>
+       </ul>
+     </section>
+
+     <h2 class="titulo">Nuestros valores enfocados al cliente</h2><br><br>
+
+     <div class="values-grid">
+         <div class="value" onclick="toggleParagraph('respeto')">
+             <h2>Respeto</h2>
+             <p class="paragraph-content" id="respeto">Es un <b>valor</b> de aceptación hacia los demás respetó a creencias, gustos y formas de vida con actitud de trato amable.</p>
+         </div>
+         
+         <div class="value" onclick="toggleParagraph('honradez')">
+             <h2>Honradez</h2>
+             <p class="paragraph-content" id="honradez">Es una <b>cualidad</b> humana que consiste en comportarse y expresarse con coherencia y sinceridad en base a la verdad y justicia.</p>
+         </div>
+ 
+         <div class="value" onclick="toggleParagraph('compromiso')">
+             <h2>Compromiso</h2>
+             <p class="paragraph-content" id="compromiso">Es <b>actuar</b> en consecuencia, es planear el camino que seguirá para llegar a tus metas, es el enfoque en tus objetivos y el trabajo constante hasta lograrlo.</p>
+         </div>
+ 
+         <div class="value" onclick="toggleParagraph('amor')">
+             <h2>Amor al trabajo</h2>
+             <p class="paragraph-content" id="amor">Es un <b>sentimiento</b> de responsabilidad que genera productividad con gusto y satisfacción donde la persona se siente realizada sin esperar un reconocimiento a cambio.</p>
+         </div>
+ 
+         <div class="value" onclick="toggleParagraph('responsabilidad')">
+             <h2>Responsabilidad</h2>
+             <p class="paragraph-content" id="responsabilidad">Es una <b>virtud</b> individual que deriva valorar y conciencia para determinar una solución y aportar el método apropiado a seguir de manera positiva.</p>
+         </div>
+ 
+     </div>
+ 
+     <h2 class="titulo2">Soluciones</h2>
+ 
+     <div class="solutions-grid">
+         <div class="solution" onclick="toggleParagraph('residencial')">
+             <img src="/img/Residencial-removebg-preview.png" alt="Residencial">
+             <h2>Residencial</h2>
+             <p class="paragraph-content" id="residencial">Equipos residenciales de aire acondicionado con los más altos estandares de calidad.</p>
+         </div>
+         <div class="solution" onclick="toggleParagraph('comercial')">
+             <img src="/img/Comercial-removebg-preview.png" alt="Comercial">
+             <h2>Comercial</h2>
+             <p class="paragraph-content" id="comercial">Contamos con una amplia gama de productos para los diferentes giros comerciales.</p>
+         </div>
+         <div class="solution" onclick="toggleParagraph('industrial')">
+             <img src="/img/Industrial-removebg-preview.png" alt="Industrial">
+             <h2>Industrial</h2>
+             <p class="paragraph-content" id="industrial">Equipo de fabricacion especial de enfriamiento y ventilacion para produccion, cuartos limpios, áreas de produccion y oficinas, según el giro del sector.</p>
+         </div>
+         <div class="solution" onclick="toggleParagraph('lcbs')">
+             <img src="/img/LCBS-removebg-preview.png" alt="LCBS">
+             <h2>LCBS (Light Commercial Building Solutions)</h2>
+             <p class="paragraph-content" id="lcbs">Maximizamos la eficiencia del sistema de aire acondicionado, calefacción o ventilación buscando el confort y uso racional de la energia.</p>
+         </div>
+     </div>
+
+     <footer>
+        <div class="footer-grid">
+            <div class="encuentranos">
+                <ul>
+                    <li><strong>Encuéntranos</strong></li>
+                    <li>Av. Viña Antigua 116-2</li>
+                    <li>Viña Antigua 20908</li>
+                    <li>Jesús María, Ags</li>
+                </ul>
+            </div>
+            <div class="contacto">
+                <ul>
+                    <li><strong>Contacto</strong></li>
+                    <li>AGS: 645-237-1984</li>
+                    <li>CDMX: 782-461-3095</li>
+                    <li>MTY: 913-542-7861</li>
+                </ul>
+            </div>
+    
+            <div class="follow">
+                <ul>
+                    <li><strong>Follow us</strong></li>
+                    <li><a href="https://www.facebook.com/gubs.hvac/"><i class="fab fa-facebook-f" style="color: white;"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/grupoubs/"><i class="fab fa-instagram" style="color: white;"></i> Instagram</a></li>
+                    <li><a href="https://x.com/grupoubs"><i class="fab fa-twitter" style="color: white;"></i> Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+        
+    <script src="/js/menuMobile.js"></script>
+    <script src="/js/botones.js"></script>
+    <script src="/js/function.js"></script>
+</body>

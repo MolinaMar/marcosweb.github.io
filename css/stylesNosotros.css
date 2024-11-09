@@ -1,0 +1,505 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-image: url('/img/grey-texture-background-cupxi624ho40xpjn.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Hace que el fondo sea estático */
+    
+}
+
+header {
+    width: 100%;
+    height: 60%;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+       
+}
+
+
+
+.hamburguer {
+    display: none;
+}
+
+.nav-bar{
+    padding-right: 20px;
+}
+
+.nav-bar ul{
+    display: flex;
+    justify-content: flex-end; /* Mueve los enlaces hacia la derecha */
+    width: 111%;
+    
+    
+}
+
+.nav-bar ul li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    padding: 10px 15px; /* Reducir el padding */
+    border-radius: 50px;
+    transition: 0.2s;
+    margin: 0 2px; /* Reducir el margen */
+}
+
+.nav-bar ul li a:hover{
+    color: gray;
+}
+
+#container-slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 915px; /* Ajustado para el ancho máximo */
+    margin: 0 auto; /* Centrar el slider */
+}
+
+#slider {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 475px; /* Cambiado a 475px */
+    min-height: 475px; /* Cambiado a 475px */
+    max-width: 915px; /* Cambiado a 915px */
+    margin: 0 auto; /* Centrar el slider */
+}
+
+#slider li {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+    z-index: -1;
+    opacity: 0;
+
+}
+#container-slider .arrowPrev, #container-slider .arrowNext{
+    font-size: 30pt;
+    color: rgba(204, 204, 204, 0.65);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    z-index: 2; 
+    
+}
+#container-slider .arrowNext {
+    left: initial;
+    right: 50px !important;
+}
+.content_slider{
+    padding: 15px 30px;
+    color: #FFF;
+    width: 100%;
+    height: 100%;
+}
+.content_slider div{
+    text-align: justify;
+}
+.content_slider h2{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 30pt;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.content_slider p {
+    font-size: 15pt;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+#slider li .content_slider{
+    background: rgba(0, 0, 0, 0.50);
+    padding: 10px 125px;
+}
+.content_slider{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnSlider{
+    color: #FFF;
+    font-size: 15pt;
+    font-family: 'arial';
+    letter-spacing: 1px;
+    padding: 10px 50px;
+    border: 1px solid #CCC;
+    background: rgba(13, 13, 13, 0.55);
+    border-radius: 31px;
+    text-decoration: none;
+    transition: .5s all;
+}
+.btnSlider:hover{
+    background: #111;
+    border: 1px solid #111;
+}
+.listslider {
+    position: absolute;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 50%;
+    bottom: 5%;
+    list-style: none;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+.listslider li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.listslider li a {
+    background: #CCC;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.item-select-slid {
+    background: #FFF  !important;
+}
+
+@media screen and (max-width: 460px){
+	.content_slider h2 {
+	    font-size: 15pt !important;
+	}
+	.content_slider p {
+	    font-size: 12pt !important;
+	}
+	#container-slider .arrowPrev, #container-slider .arrowNext{
+		font-size: 20pt;
+	}
+	#container-slider .arrowPrev{
+		left: 15px;
+	}
+	#container-slider .arrowNext{
+		right: 15px !important;
+	}
+	#slider{
+		height: 400px;
+		min-height: 400px;
+	}
+	#slider li .content_slider{
+		padding: 10px 35px;
+	}
+	.btnSlider{
+		padding: 10px 30px;
+    	font-size: 10pt;
+	}
+
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Estilo para los nuevos botones de navegación */
+.prev, .next {
+    font-size: 30px; /* Tamaño del icono */
+    color: #000; /* Color negro */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Redondear los botones */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Altura del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco más opaco al pasar el cursor */
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+
+
+@media only screen and (max-width: 1320px) {
+    header {
+        padding: 0 50px;
+        
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    header {
+        padding: 0 30px;
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .hamburguer{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburguer .line {
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+
+    .nav-bar {
+        height: 0px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        background: #232323;
+        transition: 0.2s;
+        overflow: hidden;
+    }
+
+    .nav-bar.active{
+        height: 340px;
+    }
+
+    .nav-bar ul {
+        display: block;
+        width: fit-content;
+        margin: 10px auto ;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+
+    .nav-bar ul li a {
+        margin-bottom: 12px;
+    }
+}
+
+.container {
+    padding: 20px; /* Añade relleno interno al contenedor principal */
+}
+
+.values-grid, .solutions-grid {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex; /* Utiliza un contenedor flexible para organizar elementos secundarios */
+    flex-wrap: wrap; /* Permite que los elementos secundarios se envuelvan a la siguiente línea si no hay espacio suficiente */
+    gap: 20px; /* Establece el espacio entre los elementos secundarios */
+    justify-content: center; /* Centra los elementos secundarios horizontalmente dentro del contenedor flexible */
+}
+
+.value, .solution {
+    background-color: #f2f2f2; /* Establece el color de fondo de los valores y soluciones */
+    border-radius: 10px; /* Establece la curvatura de los bordes de los valores y soluciones */
+    box-shadow: 0 4px 8px rgba(72, 72, 72, 0.619);
+    padding: 20px; /* Añade relleno alrededor de los valores y soluciones */
+    text-align:justify; /* Centra el texto dentro de los valores y soluciones */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave a la transformación y al cambio de color de fondo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los valores y soluciones */
+    width: calc(25% - 40px); /* Establece el ancho de los valores y soluciones al 25% del ancho del contenedor, con un margen adicional */
+    margin: 10px; /* Establece el margen alrededor de los valores y soluciones */
+}
+
+.value h2 {
+    text-align: center;
+}
+
+.solution{
+    background-color: #f2f2f2; /* Establece el color de fondo de los valores y soluciones */
+    border-radius: 10px; /* Establece la curvatura de los bordes de los valores y soluciones */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Agrega una sombra a los valores y soluciones */
+    padding: 20px; /* Añade relleno alrededor de los valores y soluciones */
+    text-align:center; /* Centra el texto dentro de los valores y soluciones */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Agrega una transición suave a la transformación y al cambio de color de fondo */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los valores y soluciones */
+    width: calc(25% - 40px); /* Establece el ancho de los valores y soluciones al 25% del ancho del contenedor, con un margen adicional */
+    margin: 10px; /* Establece el margen alrededor de los valores y soluciones */
+}
+
+.value:hover, .solution:hover {
+    background-color: #e0e0e0; /* Cambia el color de fondo de los valores y soluciones al pasar el mouse sobre ellos */
+    transform: translateY(-5px); /* Desplaza los valores y soluciones hacia arriba 5px al pasar el mouse sobre ellos */
+}
+
+.value h2, .solution h2 {
+    font-size: 24px; /* Establece el tamaño de fuente del título de los valores y soluciones */
+    margin-bottom: 10px; /* Añade un margen inferior al título de los valores y soluciones */
+    align-items:center;
+}
+
+.value p, .solution p {
+    font-size: 16px; /* Establece el tamaño de fuente del texto de los valores y soluciones */
+    display: none; /* Oculta inicialmente el texto de los valores y soluciones */
+    text-align: justify;
+}
+
+.titulo {
+    text-align: center; /* Centra el texto del título */
+    font-size: 36px; /* Establece el tamaño de fuente del título */
+    color: #333; /* Establece el color del texto del título */
+    margin-top: 40px; /* Añade un margen superior al título */
+}
+
+.titulo2 {
+    text-align: center; /* Centra el texto del título */
+    font-size: 36px; /* Establece el tamaño de fuente del título */
+    color: #333; /* Establece el color del texto del título */
+    margin-top: 40px; /* Añade un margen superior al título */
+}
+
+
+
+.solutions-grid img {
+    width: 20%; /* Establece el ancho de las imágenes de la cuadrícula de soluciones al 20% */
+    height: auto; /* Permite que la altura de las imágenes de la cuadrícula de soluciones se ajuste automáticamente */
+    border-radius: 10px; /* Establece la curvatura de los bordes de las imágenes de la cuadrícula de soluciones */
+}
+
+.value p, .solution p{
+    font-size: 16px;
+    display: none;
+    transition: opacity 0.5s ease; 
+}
+
+.solution {
+    box-shadow: 0 4px 8px rgba(72, 72, 72, 0.619);
+    width: calc(20% - 10px); /* Reduce el ancho de cada botón */
+    font-size: 12px; /* Ajusta el tamaño de la fuente */
+    padding: 10px; /* Ajusta el relleno interno para reducir el tamaño total */
+}
+
+.solutions-grid img {
+    width: 25%; /* Reduce el ancho de las imágenes dentro de los botones */
+    height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.footer-grid {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #232323;
+    color: #fff;
+}
+
+.footer-grid ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-grid ul li {
+    margin: 5px 0;
+}
+
+.footer-grid ul li strong {
+    font-size: 1.2em;
+}
+
+.footer-grid ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-grid ul li a i {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .values-grid, .solutions-grid {
+        flex-direction: column; /* Cambia la dirección del flex para que los elementos se apilen en columna */
+        align-items: center; /* Centra los elementos en la columna */
+    }
+
+    .value, .solution {
+        width: 100%; /* Haz que los botones ocupen todo el ancho disponible en dispositivos móviles */
+        margin: 10px 0; /* Ajusta el margen para que los botones tengan espacio entre ellos en la columna */
+    }
+
+    .value, .titulo2, h2{
+        text-align: center;
+       
+    }
+
+    .solutions-grid img {
+        width: 20%; /* Ajusta el tamaño de las imágenes dentro de los botones en dispositivos móviles */
+        
+    }
+}
+
+/* Footer responsive */
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Cambia la disposición a una columna en pantallas pequeñas */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas pequeñas */
+    }
+
+    .footer-grid ul {
+        text-align: center; /* Centra el texto dentro de cada lista */
+    }
+
+    .footer-grid ul li {
+        margin: 10px 0; /* Ajusta el margen para pantallas pequeñas */
+    }
+}
